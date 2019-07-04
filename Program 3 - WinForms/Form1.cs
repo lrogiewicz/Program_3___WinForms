@@ -17,7 +17,7 @@ namespace Program_3___WinForms
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e) //again, method names... what is button1, textbox1, textbox2, comobobox1?
         {
             RepetitionsNumberProvider repetitionsNumberProvider = new RepetitionsNumberProvider();
             int repetitionsNumber = repetitionsNumberProvider.GetRepetitionsNumber(comboBox1.Text, textBox1.Text, numbersDictionary);
@@ -44,8 +44,12 @@ namespace Program_3___WinForms
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            RepetitionsNumberProvider repetitionsNumberProvider = new RepetitionsNumberProvider();
+            RepetitionsNumberProvider repetitionsNumberProvider = new RepetitionsNumberProvider(); //if you don't want to create a new instance of the provider,
+                                                                                                   //then you need to store the reference as a class-level variable
+                                                                                                   //however, it's not bad to create new instance when you need to use it again
             int repetitionsNumber = repetitionsNumberProvider.GetRepetitionsNumber(comboBox1.Text, textBox1.Text, numbersDictionary);
+            //are you sure you need to calculate the repetitions number with each tick?
+
             ticks = ticks + 1;
             label6.Text = ticks.ToString();
             if (ticks == repetitionsNumber)
@@ -55,7 +59,9 @@ namespace Program_3___WinForms
             }
         }
 
-        public Dictionary<string, int> numbersDictionary = new Dictionary<string, int>()
+        public Dictionary<string, int> numbersDictionary = new Dictionary<string, int>() //and if we had 1000?:)
+        //probably it would make sense to extract this 'conversion' to separate class (for clarity)
+        //or alternatively, it could be an internal field of the RepetitionsNumberProvider class
         {
             {"one", 1},{"two", 2},{"three", 3},{"four", 4},{"five", 5},
             {"six", 6},{"seven", 7},{"eight", 8},{"nine", 9},{"ten", 10},

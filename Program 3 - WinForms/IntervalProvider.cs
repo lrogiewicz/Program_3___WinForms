@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Program_3___WinForms
 {
-    class IntervalProvider
+    class IntervalProvider //notice that this class is almost identical with 'repetitions number provider'. That's code duplication and could be improved (and simplified)
+    //actually, is there any difference which class would you use to get the value? (i.e. use the IntervalProvider to get the RepetitionsNumber would be identical (except for the *1000 for text))
     {
         public int GetInterval(string counterType, string intervalInput, Dictionary<string, int> dictionary)
         {
@@ -26,7 +27,7 @@ namespace Program_3___WinForms
                     {
                         if (numberText == dictionary.Keys.ElementAt(i))
                         {
-                            interval = dictionary[dictionary.Keys.ElementAt(i)] * 1000;
+                            interval = dictionary[dictionary.Keys.ElementAt(i)] * 1000; //why the numeral is *1000 but number is not? that's not consistent for the user:)
                             break;
                         }
                     }

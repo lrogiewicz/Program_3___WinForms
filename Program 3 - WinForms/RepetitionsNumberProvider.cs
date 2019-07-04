@@ -13,7 +13,7 @@ namespace Program_3___WinForms
             int repetitionsNumber;
             try
             {
-                if (counterType == "Licznik 1 (liczbowy)")
+                if (counterType == "Licznik 1 (liczbowy)") //magic strings are not good (see for example https://blog.goyello.com/2014/12/30/magic-strings-no-more/)
                 {
                     repetitionsNumber = Int32.Parse(repetitionsInput);
                     return repetitionsNumber;
@@ -21,8 +21,8 @@ namespace Program_3___WinForms
                 else if (counterType == "Licznik 2 (tekstowy)")
                 {
                     repetitionsNumber = 0;
-                    string numberText = repetitionsInput.ToLower().Replace("-", "").Replace(" ", "");
-                    for (int i = 0; i <  dictionary.Count; i++)
+                    string numberText = repetitionsInput.ToLower().Replace("-", "").Replace(" ", "");//intersting way to handle cases like 'twenty-two' or 'twenty two'
+                    for (int i = 0; i <  dictionary.Count; i++) //there are easier ways to get value out of dictionary
                     {
                         if (numberText == dictionary.Keys.ElementAt(i))
                         {
@@ -37,7 +37,7 @@ namespace Program_3___WinForms
                     return 0;
                 }
             }
-            catch (Exception)
+            catch (Exception) //it's a bit risky that you're not handling the errors in any way
             {
                 return 0;
             }
