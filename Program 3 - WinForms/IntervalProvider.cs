@@ -6,40 +6,31 @@ using System.Threading.Tasks;
 
 namespace Program_3___WinForms
 {
+    
+    
     class IntervalProvider
     {
-        public int GetInterval(string counterType, string intervalInput, Dictionary<string, int> dictionary)
+        /// <summary>
+        /// returns interval value between counting
+        /// for numeral counter it's measured in seconds
+        /// for number counter it's measured in miliseconds
+        /// </summary>
+        /// <param name="counterType">can be number or numerical</param>
+        /// <param name="input">users input</param>
+        /// <returns></returns>
+        public int GetInterval(CounterType counterType, string input)
         {
             int interval;
-            try
+            InputValueProvider inputValueProvider = new InputValueProvider();
+            interval = inputValueProvider.GetInputValue(counterType, input);
+            switch (counterType)
             {
-                if (counterType == "Licznik 1 (liczbowy)")
-                {
-                    interval = Int32.Parse(intervalInput);
+                case CounterType.Number:
                     return interval;
-                }
-                else if (counterType == "Licznik 2 (tekstowy)")
-                {
-                    interval = 0;
-                    string numberText = intervalInput.ToLower().Replace("-", "").Replace(" ", "");
-                    for (int i = 0; i < dictionary.Count; i++)
-                    {
-                        if (numberText == dictionary.Keys.ElementAt(i))
-                        {
-                            interval = dictionary[dictionary.Keys.ElementAt(i)] * 1000;
-                            break;
-                        }
-                    }
-                    return interval;
-                }
-                else
-                {
+                case CounterType.Numeral:
+                    return interval * 1000;
+                default:
                     return 0;
-                }
-            }
-            catch (Exception)
-            {
-                return 0;
             }
         }
     }

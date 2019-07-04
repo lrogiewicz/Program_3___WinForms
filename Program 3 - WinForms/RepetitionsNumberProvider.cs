@@ -8,39 +8,20 @@ namespace Program_3___WinForms
 {
     class RepetitionsNumberProvider
     {
-        public int GetRepetitionsNumber(string counterType, string repetitionsInput, Dictionary<string, int> dictionary)
+        /// <summary>
+        /// returs integer value of integer to which counter has to count
+        /// it's the same as GetInputValue from InputValueProvider
+        /// created for clarity 
+        /// </summary>
+        /// <param name="counterType">can be numerical or number</param>
+        /// <param name="input">users input to be converted</param>
+        /// <returns></returns>
+        public int GetRepetitionsNumber(CounterType counterType, string input)
         {
             int repetitionsNumber;
-            try
-            {
-                if (counterType == "Licznik 1 (liczbowy)")
-                {
-                    repetitionsNumber = Int32.Parse(repetitionsInput);
-                    return repetitionsNumber;
-                }
-                else if (counterType == "Licznik 2 (tekstowy)")
-                {
-                    repetitionsNumber = 0;
-                    string numberText = repetitionsInput.ToLower().Replace("-", "").Replace(" ", "");
-                    for (int i = 0; i <  dictionary.Count; i++)
-                    {
-                        if (numberText == dictionary.Keys.ElementAt(i))
-                        {
-                            repetitionsNumber = dictionary[dictionary.Keys.ElementAt(i)];
-                            break;
-                        }
-                    }
-                    return repetitionsNumber;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            catch (Exception)
-            {
-                return 0;
-            }
+            InputValueProvider inputValueProvider = new InputValueProvider();
+            repetitionsNumber = inputValueProvider.GetInputValue(counterType, input);
+            return repetitionsNumber;
         }
     }
 }

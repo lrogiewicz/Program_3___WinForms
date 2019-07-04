@@ -17,12 +17,24 @@ namespace Program_3___WinForms
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        public int repetitionsNumber;
+
+        //clicking on Button1 will start counter
+        //comboBox1 gets which type of counter should be executed (number or numeral)
+        //textBox1 input provides repetitions number
+        //textBox2 input provides interval number
+        //label6 shows result: counting from 0 to repetitions number with interaval
+        //uses timer1 ticks to raise counting values
+
+
+        private void Button1_Click(object sender, EventArgs e) 
         {
+            CounterTypeProvider counterTypeProvider = new CounterTypeProvider();
+            CounterType counterType = counterTypeProvider.GetCounterType(comboBox1.Text);
             RepetitionsNumberProvider repetitionsNumberProvider = new RepetitionsNumberProvider();
-            int repetitionsNumber = repetitionsNumberProvider.GetRepetitionsNumber(comboBox1.Text, textBox1.Text, numbersDictionary);
+            repetitionsNumber = repetitionsNumberProvider.GetRepetitionsNumber(counterType, textBox1.Text);
             IntervalProvider intervalProvider = new IntervalProvider();
-            int interval = intervalProvider.GetInterval(comboBox1.Text, textBox2.Text, numbersDictionary);
+            int interval = intervalProvider.GetInterval(counterType, textBox2.Text);
 
             if (repetitionsNumber <= 0 || interval <= 0)
             {
@@ -44,8 +56,6 @@ namespace Program_3___WinForms
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            RepetitionsNumberProvider repetitionsNumberProvider = new RepetitionsNumberProvider();
-            int repetitionsNumber = repetitionsNumberProvider.GetRepetitionsNumber(comboBox1.Text, textBox1.Text, numbersDictionary);
             ticks = ticks + 1;
             label6.Text = ticks.ToString();
             if (ticks == repetitionsNumber)
@@ -54,29 +64,5 @@ namespace Program_3___WinForms
                 button1.Text = "Odliczanie zakończone";
             }
         }
-
-        public Dictionary<string, int> numbersDictionary = new Dictionary<string, int>()
-        {
-            {"one", 1},{"two", 2},{"three", 3},{"four", 4},{"five", 5},
-            {"six", 6},{"seven", 7},{"eight", 8},{"nine", 9},{"ten", 10},
-            {"eleven", 11},{"twelve", 12},{"thirteen", 13},{"fourteen", 14},{"fifteen", 15},
-            {"sixteen", 16},{"seventeen", 17},{"eighteen", 18},{"nineteen", 19},{"twenty", 20},
-            {"twentyone", 21},{"twentytwo", 22},{"twentythree", 23},{"twentyfour", 24},{"twentyfive", 25},
-            {"twentysix", 26},{"twentyseven", 27},{"twentyeight", 28},{"twentynine", 29},{"thirty", 30},
-            {"thirtyone", 31},{"thirtytwo", 32},{"thirtythree", 33},{"thirtyfour", 34},{"thirtyfive", 35},
-            {"thirtysix", 36},{"thirtyseven", 37},{"thirtyeight", 38},{"thirtynine", 39},{"forty", 40},
-            {"fortyone", 41},{"fortytwo", 42},{"fortythree", 43},{"fortyfour", 44},{"fortyfive", 45},
-            {"fortysix", 46},{"fortyseven", 47},{"fortyeight", 48},{"fortynine", 49},{"fifty", 50},
-            {"fiftyone", 51},{"fiftytwo", 52},{"fiftythree", 53},{"fiftyfour", 54},{"fiftyfive", 55},
-            {"fiftysix", 56},{"fiftyseven", 57},{"fiftyeight", 58},{"fiftynine", 59},{"sixty", 60},
-            {"sixtyone", 61},{"sixtytwo", 62},{"sixtythree", 63},{"sixtyfour", 64},{"sixtyfive", 65},
-            {"sixtysix", 66},{"sixtyseven", 67},{"sixtyeight", 68},{"sixtynine", 69},{"seventy", 70},
-            {"seventyone", 71},{"seventytwo", 72},{"seventythree", 73},{"seventyfour", 74},{"seventyfive", 75},
-            {"seventysix", 76},{"seventyseven", 77},{"seventyeight", 78},{"seventynine", 79},{"eighty", 80},
-            {"eightyone", 81},{"eightytwo", 82},{"eightythree", 83},{"eightyfour", 84},{"eightyfive", 85},
-            {"eightysix", 86},{"eightyseven", 87},{"eightyeight", 88},{"eightynine", 89},{"ninety", 90},
-            {"ninetyone", 91},{"ninetytwo", 92},{"ninetythree", 93},{"ninetyfour", 94},{"ninetyfive", 95},
-            {"ninetysix", 96},{"ninetyseven", 97},{"ninetyeight", 98},{"ninetynine", 99},{"hundred", 100},
-        };
     }
 }
