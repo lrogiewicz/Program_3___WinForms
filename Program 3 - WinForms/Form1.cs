@@ -19,12 +19,17 @@ namespace Program_3___WinForms
 
         public int repetitionsNumber;
 
-        //clicking on Button1 will start counter
-        //comboBox1 gets which type of counter should be executed (number or numeral)
-        //textBox1 input provides repetitions number
-        //textBox2 input provides interval number
-        //label6 shows result: counting from 0 to repetitions number with interaval
+        //OK, probably I wasn't clear what I wanted you to do. 
+        //you need to give proper correct names to the methods and objects, rather than adding descriptions like below
+        // see hints of proper names
+
+        //clicking on Button1 will start counter - ok, so the button should be called StartCounterButton and the method should be called StartCounterButton_Click
+        //comboBox1 gets which type of counter should be executed (number or numeral) - so it should be called CounterTypeComboBox
+        //textBox1 input provides repetitions number - RepetitionsNumberTextBox
+        //textBox2 input provides interval number - IntervalTextBox
+        //label6 shows result: counting from 0 to repetitions number with interaval - ResultLabel
         //uses timer1 ticks to raise counting values
+
 
 
         private void Button1_Click(object sender, EventArgs e) 

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Program_3___WinForms
 {
-    class CounterTypeProvider
+    class CounterTypeProvider //very nice, single responsibility class, no extra dependencies. 
     {
 
-        private static readonly string NumberCounterName = "Licznik 1 (liczbowy)";
+        private static readonly string NumberCounterName = "Licznik 1 (liczbowy)"; //very nice:)
         private static readonly string NumeralCounterName = "Licznik 2 (tekstowy)";
         /// <summary>
         /// returns counters type
@@ -18,7 +18,7 @@ namespace Program_3___WinForms
         /// <returns></returns>
         public CounterType GetCounterType(string counterName)
         {
-            if (String.Equals(counterName, NumberCounterName, StringComparison.OrdinalIgnoreCase))
+            if (String.Equals(counterName, NumberCounterName, StringComparison.OrdinalIgnoreCase)) //the 'safest' string comparison type, congrats
             {
                 return CounterType.Number;
             }

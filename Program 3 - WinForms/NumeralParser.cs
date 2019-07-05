@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Program_3___WinForms
 {
-    class NumeralParser
+    class NumeralParser 
     {
         /// <summary>
         /// helpful dictionary which allows to jump between strings and integers
         /// </summary>
+        //the dictionary could and probably should be made private - you only allow access to the values through the 'GetNumeralValue()' method 
         public Dictionary<string, int> numbersDictionary = new Dictionary<string, int>()
         {
             {"one", 1},{"two", 2},{"three", 3},{"four", 4},{"five", 5},
@@ -46,7 +47,7 @@ namespace Program_3___WinForms
             try
             {
                 input = input.ToLower().Replace("-", "").Replace(" ", "");
-                if (numbersDictionary.TryGetValue(input, out numeralValue))
+                if (numbersDictionary.TryGetValue(input, out numeralValue)) //yup, very well
                 {
                     return numeralValue;
                 }

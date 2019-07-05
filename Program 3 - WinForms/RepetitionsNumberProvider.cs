@@ -19,7 +19,7 @@ namespace Program_3___WinForms
         public int GetRepetitionsNumber(CounterType counterType, string input)
         {
             int repetitionsNumber;
-            InputValueProvider inputValueProvider = new InputValueProvider();
+            InputValueProvider inputValueProvider = new InputValueProvider(); //very well, invoking a class from a different class
             repetitionsNumber = inputValueProvider.GetInputValue(counterType, input);
             return repetitionsNumber;
         }
