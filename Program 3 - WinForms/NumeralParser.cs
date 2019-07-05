@@ -46,14 +46,10 @@ namespace Program_3___WinForms
             try
             {
                 input = input.ToLower().Replace("-", "").Replace(" ", "");
-                for (int i = 0; i < numbersDictionary.Count; i++)
+                if (numbersDictionary.TryGetValue(input, out numeralValue))
                 {
-                    if (input == numbersDictionary.Keys.ElementAt(i))
-                    {
-                        numeralValue = numbersDictionary[numbersDictionary.Keys.ElementAt(i)];
-                        break;
-                    }
-                } 
+                    return numeralValue;
+                }
             }
             catch (Exception)
             {
