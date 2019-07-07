@@ -48,11 +48,17 @@
   <ItemGroup>
     <Compile Include="CounterType.cs" />
     <Compile Include="CounterTypeProvider.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="CounterTypeAndNumberForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CounterTypeAndNumberForm.Designer.cs">
+      <DependentUpon>CounterTypeAndNumberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CounterRepetitionsAndIntervalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CounterRepetitionsAndIntervalForm.Designer.cs">
+      <DependentUpon>CounterRepetitionsAndIntervalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InputValueProvider.cs" />
     <Compile Include="IntervalProvider.cs" />
@@ -60,8 +66,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepetitionsNumberProvider.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="CounterTypeAndNumberForm.resx">
+      <DependentUpon>CounterTypeAndNumberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CounterRepetitionsAndIntervalForm.resx">
+      <DependentUpon>CounterRepetitionsAndIntervalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

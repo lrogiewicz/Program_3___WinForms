@@ -8,7 +8,6 @@ namespace Program_3___WinForms
 {
     class CounterTypeProvider
     {
-
         private static readonly string NumberCounterName = "Licznik 1 (liczbowy)";
         private static readonly string NumeralCounterName = "Licznik 2 (tekstowy)";
         /// <summary>
