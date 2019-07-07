@@ -10,7 +10,7 @@ namespace Program_3___WinForms
     /// possible types of counter
     /// </summary>
     public enum CounterType
-    {
-        Unrecognized, Number, Numeral
+    { 
+        Unrecognized, Number, Numeral //cool, but keep each in separate line
     }
 }
