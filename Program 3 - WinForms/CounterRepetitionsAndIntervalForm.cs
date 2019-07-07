@@ -12,10 +12,14 @@ namespace Program_3___WinForms
 {
     public partial class CounterRepetitionsAndIntervalForm : Form
     {
-        public CounterRepetitionsAndIntervalForm(CounterType CounterType)
+        public CounterRepetitionsAndIntervalForm(CounterType CounterType) //params start with lowercase letter
         {
             InitializeComponent();
-            counterType = CounterType;
+            counterType = CounterType; //so, if you have a lowercase letter parameter,
+                                       //you have the same name for the constructor parameter and your private readonly field.
+                                       //how is that ambiguity solved? by ALWAYS adding 'this.' prefix to class level instance members
+                                       //(so, this.counterType = counterType;)
+
         }
 
         private readonly CounterType counterType;
@@ -37,9 +41,15 @@ namespace Program_3___WinForms
             }
             else
             {
-                CounterTimer.Interval = interval;
+                //regarding timers...
+                //I would use a different one (if I had to use a timer at all)
+                //the one that you chose is a WinForms timer, i.e. it is tied to WinForms
+                //Try perhaps System.Timers.Timer, as it is not tied to Winforms and you can use it in console as well
+                //it has it's own 'issues' though... :)
+                CounterTimer.Interval = interval; 
+                CounterTimer.Tick += CounterTimer_Tick; //you are assigning a second event handler here, hence it does not work properly
+
                 CounterTimer.Start();
-                CounterTimer.Tick += CounterTimer_Tick;
                 ResultLabel.Text = "0";
                 StartCounterButton.Text = "Odliczam...";
                 StartCounterButton.Enabled = false;
@@ -51,7 +61,7 @@ namespace Program_3___WinForms
         private void CounterTimer_Tick(object sender, EventArgs e)
         {
             ticks += 1;
-
+           
             ResultLabel.Text = ticks.ToString();
 
             if (ticks == repetitionsNumber)
