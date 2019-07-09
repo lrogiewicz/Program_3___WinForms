@@ -16,7 +16,7 @@ namespace Program_3___WinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CounterTypeAndNumberForm());
+            Application.Run(new CountersConfiguratorForm());
         }
     }
 }

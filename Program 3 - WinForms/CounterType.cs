@@ -11,6 +11,8 @@ namespace Program_3___WinForms
     /// </summary>
     public enum CounterType
     {
-        Unrecognized, Number, Numeral
+        Unrecognized,
+        Number,
+        Numeral
     }
 }

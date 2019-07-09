@@ -46,19 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Counter.cs" />
     <Compile Include="CounterType.cs" />
     <Compile Include="CounterTypeProvider.cs" />
-    <Compile Include="CounterTypeAndNumberForm.cs">
+    <Compile Include="CountersConfiguratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CounterTypeAndNumberForm.Designer.cs">
-      <DependentUpon>CounterTypeAndNumberForm.cs</DependentUpon>
+    <Compile Include="CountersConfiguratorForm.Designer.cs">
+      <DependentUpon>CountersConfiguratorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CounterRepetitionsAndIntervalForm.cs">
+    <Compile Include="ResultCountingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CounterRepetitionsAndIntervalForm.Designer.cs">
-      <DependentUpon>CounterRepetitionsAndIntervalForm.cs</DependentUpon>
+    <Compile Include="ResultCountingForm.Designer.cs">
+      <DependentUpon>ResultCountingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InputValueProvider.cs" />
     <Compile Include="IntervalProvider.cs" />
@@ -66,11 +67,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepetitionsNumberProvider.cs" />
-    <EmbeddedResource Include="CounterTypeAndNumberForm.resx">
-      <DependentUpon>CounterTypeAndNumberForm.cs</DependentUpon>
+    <EmbeddedResource Include="CountersConfiguratorForm.resx">
+      <DependentUpon>CountersConfiguratorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CounterRepetitionsAndIntervalForm.resx">
-      <DependentUpon>CounterRepetitionsAndIntervalForm.cs</DependentUpon>
+    <EmbeddedResource Include="ResultCountingForm.resx">
+      <DependentUpon>ResultCountingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

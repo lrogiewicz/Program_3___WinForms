@@ -1,6 +1,6 @@
 ﻿namespace Program_3___WinForms
 {
-    partial class CounterTypeAndNumberForm
+    partial class CountersConfiguratorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,6 +39,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.CountersNumberNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.CountersCreatorButton = new System.Windows.Forms.Button();
+            this.CountersConfiguratorButton = new System.Windows.Forms.Button();
+            this.RepetitionsNumberTextBox = new System.Windows.Forms.TextBox();
+            this.IntervalTextBox = new System.Windows.Forms.TextBox();
+            this.ErrorsLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.CountersResultFormsCreator = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CountersNumberNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,9 +113,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(10, 150);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(214, 13);
+            this.label10.Size = new System.Drawing.Size(100, 13);
             this.label10.TabIndex = 12;
-            this.label10.Text = "Wybierz licznik z którego chcesz skorzystać";
+            this.label10.Text = "Wybierz typ licznika";
             // 
             // CounterTypeComboBox
             // 
@@ -149,19 +157,105 @@
             // 
             // CountersCreatorButton
             // 
-            this.CountersCreatorButton.Location = new System.Drawing.Point(188, 210);
+            this.CountersCreatorButton.Location = new System.Drawing.Point(450, 170);
             this.CountersCreatorButton.Name = "CountersCreatorButton";
-            this.CountersCreatorButton.Size = new System.Drawing.Size(100, 50);
+            this.CountersCreatorButton.Size = new System.Drawing.Size(100, 21);
             this.CountersCreatorButton.TabIndex = 16;
             this.CountersCreatorButton.Text = "Stwórz liczniki";
             this.CountersCreatorButton.UseVisualStyleBackColor = true;
             this.CountersCreatorButton.Click += new System.EventHandler(this.CreateCounters);
             // 
-            // CounterTypeAndNumberForm
+            // CountersConfiguratorButton
+            // 
+            this.CountersConfiguratorButton.Location = new System.Drawing.Point(450, 250);
+            this.CountersConfiguratorButton.Name = "CountersConfiguratorButton";
+            this.CountersConfiguratorButton.Size = new System.Drawing.Size(100, 21);
+            this.CountersConfiguratorButton.TabIndex = 17;
+            this.CountersConfiguratorButton.Text = "Zapisz";
+            this.CountersConfiguratorButton.UseVisualStyleBackColor = true;
+            this.CountersConfiguratorButton.Visible = false;
+            this.CountersConfiguratorButton.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // RepetitionsNumberTextBox
+            // 
+            this.RepetitionsNumberTextBox.Location = new System.Drawing.Point(13, 250);
+            this.RepetitionsNumberTextBox.Name = "RepetitionsNumberTextBox";
+            this.RepetitionsNumberTextBox.Size = new System.Drawing.Size(211, 20);
+            this.RepetitionsNumberTextBox.TabIndex = 18;
+            this.RepetitionsNumberTextBox.Visible = false;
+            // 
+            // IntervalTextBox
+            // 
+            this.IntervalTextBox.Location = new System.Drawing.Point(253, 250);
+            this.IntervalTextBox.Name = "IntervalTextBox";
+            this.IntervalTextBox.Size = new System.Drawing.Size(173, 20);
+            this.IntervalTextBox.TabIndex = 19;
+            this.IntervalTextBox.Visible = false;
+            // 
+            // ErrorsLabel
+            // 
+            this.ErrorsLabel.AutoSize = true;
+            this.ErrorsLabel.Location = new System.Drawing.Point(10, 280);
+            this.ErrorsLabel.Name = "ErrorsLabel";
+            this.ErrorsLabel.Size = new System.Drawing.Size(35, 13);
+            this.ErrorsLabel.TabIndex = 20;
+            this.ErrorsLabel.Text = "label4";
+            this.ErrorsLabel.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 210);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Licznik nr 1";
+            this.label5.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(10, 230);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Ilość powtórzeń";
+            this.label6.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(250, 230);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(46, 13);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Interwał";
+            this.label12.Visible = false;
+            // 
+            // CountersResultFormsCreator
+            // 
+            this.CountersResultFormsCreator.Location = new System.Drawing.Point(185, 300);
+            this.CountersResultFormsCreator.Name = "CountersResultFormsCreator";
+            this.CountersResultFormsCreator.Size = new System.Drawing.Size(100, 21);
+            this.CountersResultFormsCreator.TabIndex = 24;
+            this.CountersResultFormsCreator.Text = "Uruchom liczniki";
+            this.CountersResultFormsCreator.UseVisualStyleBackColor = true;
+            this.CountersResultFormsCreator.Visible = false;
+            this.CountersResultFormsCreator.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // CountersConfiguratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 269);
+            this.ClientSize = new System.Drawing.Size(564, 331);
+            this.Controls.Add(this.CountersResultFormsCreator);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.ErrorsLabel);
+            this.Controls.Add(this.IntervalTextBox);
+            this.Controls.Add(this.RepetitionsNumberTextBox);
+            this.Controls.Add(this.CountersConfiguratorButton);
             this.Controls.Add(this.CountersCreatorButton);
             this.Controls.Add(this.CountersNumberNumericUpDown);
             this.Controls.Add(this.label11);
@@ -173,8 +267,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "CounterTypeAndNumberForm";
-            this.Text = "Wybór typu i ilości liczników";
+            this.Name = "CountersConfiguratorForm";
+            this.Text = "Konfiguruj liczniki";
             this.Load += new System.EventHandler(this.CounterTypeAndNumberForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CountersNumberNumericUpDown)).EndInit();
             this.ResumeLayout(false);
@@ -194,6 +288,14 @@
         private System.Windows.Forms.NumericUpDown CountersNumberNumericUpDown;
         private System.Windows.Forms.Button CountersCreatorButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button CountersConfiguratorButton;
+        private System.Windows.Forms.TextBox RepetitionsNumberTextBox;
+        private System.Windows.Forms.TextBox IntervalTextBox;
+        private System.Windows.Forms.Label ErrorsLabel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button CountersResultFormsCreator;
     }
 }
 
