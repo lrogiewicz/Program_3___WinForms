@@ -30,6 +30,7 @@ namespace Program_3___WinForms
             counterType = counterTypeProvider.GetCounterType(CounterTypeComboBox.Text);
             countersNumber = Decimal.ToInt32(CountersNumberNumericUpDown.Value);
             label5.Text = "Licznik nr " + countersNumberIndex.ToString();
+            //this way of handling UI elements will soon become error prone (what if you add a button and forget to add the .Enabled = true/false in all the places which handle it?)
             CountersCreatorButton.Enabled = false;
             CountersNumberNumericUpDown.Enabled = false;
             CounterTypeComboBox.Enabled = false;
@@ -41,7 +42,7 @@ namespace Program_3___WinForms
             CountersConfiguratorButton.Visible = true;
         }
 
-        private void CounterTypeAndNumberForm_Load(object sender, EventArgs e)
+        private void CounterTypeAndNumberForm_Load(object sender, EventArgs e)//what is CounterTypeAndNumberForm?
         {
             CounterTypeComboBox.SelectedIndex = 0;
         }
@@ -59,7 +60,7 @@ namespace Program_3___WinForms
                 return;
             }
             else
-            {
+            { //the thing that happens below is quite complex, I had troubles figuring out what and why ;)
                 if (countersNumberIndex < countersNumber)
                 {
                     counterList.Add(new Counter(countersNumberIndex, repetitionsNumber, interval));
@@ -83,18 +84,23 @@ namespace Program_3___WinForms
             }
         }
 
-        public delegate void passCounterSettings(int index, int repetitionsNumber, int interval);
+        public delegate void passCounterSettings(int index, int repetitionsNumber, int interval); //Start with capital
 
         private void Button2_Click(object sender, EventArgs e)
         {
             foreach (Counter counter in counterList)
             {
+                //hm, not quite the right use of a delegate:)
                 ResultCountingForm counterRepetitionsAndIntervalForm = new ResultCountingForm();
                 passCounterSettings del = new passCounterSettings(counterRepetitionsAndIntervalForm.StartCounter);
                 del(counter.Index, counter.RepetitionsNumber, counter.Interval);
+                //instead of the above, you could just as well write, and the delegate is not needed
+                //counterRepetitionsAndIntervalForm.StartCounter(counter.Index, counter.RepetitionsNumber, counter.Interval);
+
                 counterRepetitionsAndIntervalForm.Text = "Licznik nr " + counter.Index.ToString();
                 counterRepetitionsAndIntervalForm.Show();
             }
+            
             counterList.Clear();
             CountersCreatorButton.Enabled = true;
             CountersNumberNumericUpDown.Enabled = true;
