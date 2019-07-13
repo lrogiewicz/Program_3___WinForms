@@ -241,7 +241,7 @@
             this.CountersResultFormsCreator.Text = "Uruchom liczniki";
             this.CountersResultFormsCreator.UseVisualStyleBackColor = true;
             this.CountersResultFormsCreator.Visible = false;
-            this.CountersResultFormsCreator.Click += new System.EventHandler(this.Button2_Click);
+            this.CountersResultFormsCreator.Click += new System.EventHandler(this.CountersResultFormsCreator_Click);
             // 
             // CountersConfiguratorForm
             // 
@@ -269,7 +269,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CountersConfiguratorForm";
             this.Text = "Konfiguruj liczniki";
-            this.Load += new System.EventHandler(this.CounterTypeAndNumberForm_Load);
+            this.Load += new System.EventHandler(this.CountersConfiguratorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CountersNumberNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

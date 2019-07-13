@@ -41,7 +41,7 @@ namespace Program_3___WinForms
             CountersConfiguratorButton.Visible = true;
         }
 
-        private void CounterTypeAndNumberForm_Load(object sender, EventArgs e)
+        private void CountersConfiguratorForm_Load(object sender, EventArgs e)
         {
             CounterTypeComboBox.SelectedIndex = 0;
         }
@@ -83,17 +83,14 @@ namespace Program_3___WinForms
             }
         }
 
-        public delegate void passCounterSettings(int index, int repetitionsNumber, int interval);
-
-        private void Button2_Click(object sender, EventArgs e)
+        private void CountersResultFormsCreator_Click(object sender, EventArgs e)
         {
             foreach (Counter counter in counterList)
             {
-                ResultCountingForm counterRepetitionsAndIntervalForm = new ResultCountingForm();
-                passCounterSettings del = new passCounterSettings(counterRepetitionsAndIntervalForm.StartCounter);
-                del(counter.Index, counter.RepetitionsNumber, counter.Interval);
-                counterRepetitionsAndIntervalForm.Text = "Licznik nr " + counter.Index.ToString();
-                counterRepetitionsAndIntervalForm.Show();
+                ResultCountingForm resultCountingForm = new ResultCountingForm();
+                resultCountingForm.StartCounter(counter.Index, counter.RepetitionsNumber, counter.Interval);
+                resultCountingForm.Text = "Licznik nr " + counter.Index.ToString();
+                resultCountingForm.Show();
             }
             counterList.Clear();
             CountersCreatorButton.Enabled = true;
