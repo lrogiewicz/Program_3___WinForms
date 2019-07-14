@@ -43,5 +43,10 @@ namespace Program_3___WinForms
                 CounterTimer.Stop();
             }
         }
+
+        private void ResultLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

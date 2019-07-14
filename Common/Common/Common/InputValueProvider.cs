@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Program_3___WinForms
+namespace Common
 {
-    class InputValueProvider
+    public class InputValueProvider
     {
     /// <summary>
     /// returns integer value of users input depending of choosen counter

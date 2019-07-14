@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Program_3___WinForms
+namespace Common
 {
-    class NumeralParser
+    public class NumeralParser
     {
         /// <summary>
         /// helpful dictionary which allows to jump between strings and integers

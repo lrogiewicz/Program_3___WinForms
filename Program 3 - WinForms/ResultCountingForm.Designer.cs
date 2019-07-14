@@ -62,6 +62,7 @@
             this.ResultLabel.Size = new System.Drawing.Size(100, 26);
             this.ResultLabel.TabIndex = 4;
             this.ResultLabel.Text = "Rezultat";
+            this.ResultLabel.Click += new System.EventHandler(this.ResultLabel_Click);
             // 
             // ResultCountingForm
             // 

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Program_3___WinForms
+namespace Common
 {
-    
-    
-    class IntervalProvider
+
+
+    public static class IntervalProvider
     {
         /// <summary>
         /// returns interval value between counting
@@ -18,7 +18,7 @@ namespace Program_3___WinForms
         /// <param name="counterType">can be number or numerical</param>
         /// <param name="input">users input</param>
         /// <returns></returns>
-        public int GetInterval(CounterType counterType, string input)
+        public static int GetInterval(CounterType counterType, string input)
         {
             int interval;
             InputValueProvider inputValueProvider = new InputValueProvider();

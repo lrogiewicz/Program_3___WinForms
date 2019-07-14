@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Program_3___WinForms
+namespace Common
 {
-    class RepetitionsNumberProvider
+    public static class RepetitionsNumberProvider
     {
         /// <summary>
         /// returs integer value of integer to which counter has to count
@@ -16,7 +16,7 @@ namespace Program_3___WinForms
         /// <param name="counterType">can be numerical or number</param>
         /// <param name="input">users input to be converted</param>
         /// <returns></returns>
-        public int GetRepetitionsNumber(CounterType counterType, string input)
+        public static int GetRepetitionsNumber(CounterType counterType, string input)
         {
             int repetitionsNumber;
             InputValueProvider inputValueProvider = new InputValueProvider();

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Common;
 
 namespace Program_3___WinForms
 {
@@ -26,8 +27,7 @@ namespace Program_3___WinForms
 
         private void CreateCounters(object sender, EventArgs e)
         {
-            CounterTypeProvider counterTypeProvider = new CounterTypeProvider();
-            counterType = counterTypeProvider.GetCounterType(CounterTypeComboBox.Text);
+            counterType = CounterTypeProvider.GetCounterType(CounterTypeComboBox.Text);
             countersNumber = Decimal.ToInt32(CountersNumberNumericUpDown.Value);
             label5.Text = "Licznik nr " + countersNumberIndex.ToString();
             CountersCreatorButton.Enabled = false;
@@ -48,10 +48,8 @@ namespace Program_3___WinForms
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            RepetitionsNumberProvider repetitionsNumberProvider = new RepetitionsNumberProvider();
-            repetitionsNumber = repetitionsNumberProvider.GetRepetitionsNumber(counterType, RepetitionsNumberTextBox.Text);
-            IntervalProvider intervalProvider = new IntervalProvider();
-            interval = intervalProvider.GetInterval(counterType, IntervalTextBox.Text);
+            repetitionsNumber = RepetitionsNumberProvider.GetRepetitionsNumber(counterType, RepetitionsNumberTextBox.Text);
+            interval = IntervalProvider.GetInterval(counterType, IntervalTextBox.Text);
             if (repetitionsNumber <= 0 || interval <= 0)
             {
                 ErrorsLabel.Text = "Sprawdź poprawność wprowadzonych danych. ";

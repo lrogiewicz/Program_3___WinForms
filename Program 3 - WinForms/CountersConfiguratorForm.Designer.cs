@@ -122,8 +122,8 @@
             this.CounterTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CounterTypeComboBox.FormattingEnabled = true;
             this.CounterTypeComboBox.Items.AddRange(new object[] {
-            "Licznik 1 (liczbowy)",
-            "Licznik 2 (tekstowy)"});
+            "liczbowy",
+            "tekstowy"});
             this.CounterTypeComboBox.Location = new System.Drawing.Point(13, 170);
             this.CounterTypeComboBox.Name = "CounterTypeComboBox";
             this.CounterTypeComboBox.Size = new System.Drawing.Size(211, 21);

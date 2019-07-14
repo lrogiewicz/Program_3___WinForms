@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Program_3___WinForms
+namespace Common
 {
-    class CounterTypeProvider
+    public static class CounterTypeProvider
     {
-        private static readonly string NumberCounterName = "Licznik 1 (liczbowy)";
-        private static readonly string NumeralCounterName = "Licznik 2 (tekstowy)";
+        private static readonly string NumberCounterName = "liczbowy";
+        private static readonly string NumeralCounterName = "tekstowy";
         /// <summary>
         /// returns counters type
         /// </summary>
         /// <param name="counterName">string which tells which counter type is choosen</param>
         /// <returns></returns>
-        public CounterType GetCounterType(string counterName)
+        public static CounterType GetCounterType(string counterName)
         {
             if (String.Equals(counterName, NumberCounterName, StringComparison.OrdinalIgnoreCase))
             {

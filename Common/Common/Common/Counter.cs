@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Program_3___WinForms
+namespace Common
 {
-    class Counter
+    public class Counter
     {
         public int Index { get; set; }
         public int RepetitionsNumber { get; set; }
         public int Interval { get; set; }
+        public int Tick { get; set; }
         public Counter(int index, int repetitionsNumber, int interval)
         {
             this.Index = index;
